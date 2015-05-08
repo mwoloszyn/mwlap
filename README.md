@@ -65,22 +65,37 @@ Then you should cd to the created directory.
     make cleanall - removes all file produces by pdflatex including *.pdf
 
 Some helpful (re)defined LaTeX commands:
+
  \newslide ==> produces a new page in the 'screen' version, ignored in the 
                'printout' version
+               
  \SCR{x} ==> x will be visible *only* in the 'screen' version
+ 
  \PRN{x} ==> x will be visible *only* in the 'printout' version
+ 
  \makeslidetitle{x} ==> produces title page (different for each mode), defines 
                         headers/footers etc.
+                        
  \code{x} == \lstinline|x|
+ 
  \concept{x} == \textcolor{BrickRed}{x}
+ 
  \underl{x} == \textcolor{MidnightBlue}{\underline{x}}
+ 
  \TODO{x} == \colorbox{red}{\textcolor{white}{\bf TODO}} \textcolor{red}{#1}
+ 
  \Q{x} ==> coloured question mark followed by x
+ 
  \W{x} ==> coloured exclamation mark followed by x
+ 
  \stdin{x} ==> for presenting interactive input
+ 
  \out{x} ==> for presenting output (single line usually)
+ 
  \outinclude{filename} ==> for presenting output included from file
+ 
 and environments:
+
  outlisting ==> for presenting output
 
 Note: listings containing max. 52 chars at 17 lines fit into the default 
