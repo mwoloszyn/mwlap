@@ -1,6 +1,4 @@
 # mwlap
-Automatically exported from code.google.com/p/mwlap
-
 
 Maciej Woloszyn AGH Krakow <woloszyn@agh.edu.pl> (c) 2010
 
@@ -89,3 +87,7 @@ and environments:
 Note: listings containing max. 52 chars at 17 lines fit into the default 
 'screen' (papersize={100mm,75mm}, fontsize=10pt)
 
+
+---
+
+Automatically exported from code.google.com/p/mwlap
