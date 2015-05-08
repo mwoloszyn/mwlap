@@ -1,0 +1,16 @@
+TODO list
+=========
+
+ * find decent fonts, see e.g.
+     http://www.tug.dk/FontCatalogue/
+     http://ctan.tug.org/tex-archive/info/Free_Math_Font_Survey/survey.html
+
+ * more sophisticated Makefile for LaTeX, based on
+     http://code.google.com/p/latex-makefile/
+
+ * add support for other languages in _share_/src/Makefile
+
+ * add _share_/fig/Makefile converting images to PDF, PNG or JPG formats
+     allowed by pdflatex
+
+ * allow including only selected lines from files with output data

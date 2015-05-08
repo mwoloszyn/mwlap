@@ -1,0 +1,134 @@
+% Maciej Woloszyn AGH Krakow <woloszyn@fatcat.ftj.agh.edu.pl> (c) 2010
+
+\makeslidetitle{99}
+
+\section{Creating slides}
+\begin{itemize}
+\item 
+\verb|\newslide| produces \verb|\newpage| in the file
+used for presentation, while being ignored for printout PDF
+\item 
+\verb|\SCR{foo}|  $\leftarrow$ (\SCR{\texttt{foo}}) will be visible only in the
+'screen' PDF
+\item 
+\verb|\PRN{foo}|  $\leftarrow$ (\PRN{\texttt{foo}}) will be visible only in the
+'printout' PDF
+\end{itemize}
+
+\newslide
+
+\section{Presenting source code}
+
+
+\subsection{Including files}
+\verb|\lstinputlisting{src/Hello.java}|\\
+$\to$
+\lstinputlisting{src/Hello.java}
+\newslide
+\verb|\lstinputlisting[firstline=2,lastline=3]%|\\
+\verb|   {src/Hello.java}|\\
+\verb|\outinclude{src/Hello.out}|\\
+$\to$
+\lstinputlisting[firstline=2,lastline=3]{src/Hello.java}
+\outinclude{src/Hello.out}
+
+\subsection{Inline}
+$\alpha$ \code{int n=1;} for..  $\leftarrow$ \verb|$\alpha$ \code{int n=1;} for..|\\
+
+\newslide
+\subsection{lstlisting environment}
+\begin{lstlisting}
+class A {
+  public String toString() {
+    return "class A object";
+  }
+}
+\end{lstlisting}
+\begin{lstlisting}
+System.out.println(new A());
+\end{lstlisting}
+\out{class A object}
+\SCR{~\\~\\~\\~\\~\\}
+is produced from:
+\newslide
+
+\begin{verbatim}
+\begin{lstlisting}
+class A {
+  public String toString() {
+    return "class A object";
+  }
+}
+\end{lstlisting}
+\begin{lstlisting}
+System.out.println(new A());
+\end{lstlisting}
+\out{class A object}
+\end{verbatim}
+
+%%% \end{verbatim}
+
+\newslide
+
+\begin{lstlisting}
+12345678901234567890123456789012345678901234567890
+2--------1---------2---------3---------4---------5
+3
+4
+5
+6
+7              rows and columns available
+8               for the default settings
+9
+10
+11
+12
+13
+14
+15
+16
+\end{lstlisting}
+
+\newslide
+
+\subsection{outlisting environment}
+\begin{verbatim}
+\begin{lstlisting}
+some code
+\end{lstlisting}
+\begin{outlisting}
+1st line of results
+2nd line of results
+\end{outlisting}
+\end{verbatim}
+
+$\to$
+
+\begin{lstlisting}
+some code
+\end{lstlisting}
+\begin{outlisting}
+1st line of results
+2nd line of results
+\end{outlisting}
+
+\newslide
+\section{Other commands}
+
+
+\concept{concept} $\leftarrow$ \verb|\concept{concept}|\\
+\underl{underl} $\leftarrow$ \verb|\underl{underl}|\\
+~\\
+\stdin{interactive input} $\leftarrow$ \verb|\stdin{interactive input}|\\
+~\\
+\Q{how ..} $\leftarrow$ \verb|\Q{how ..}|\\
+\W{note ..} $\leftarrow$ \verb|\W{note ..}|\\
+~\\
+\TODO{add ..} $\leftarrow$ \verb|\TODO{add ..}|\\
+
+\newslide
+\section{Outcome}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{fig/final}
+\end{center}
+

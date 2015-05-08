@@ -1,0 +1,67 @@
+%    Maciej Woloszyn AGH Krakow <woloszyn@agh.edu.pl> (c) 2010
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+% run (pdf)latex on this file to produce screen version of the presentation
+
+
+% include instructions shared by screen and printout versions
+\input{shared}
+
+% set page geometry (you may want to change papersize to scale fonts easily or change proportions)
+\usepackage[papersize={100mm,75mm},margin=4mm]{geometry}
+
+\setlength\parindent{0cm}
+%\addtolength{\parskip}{\baselineskip}
+\setlength\itemindent{0cm}
+\setlength\itemsep{0cm}
+\setlength\leftmargin{0cm}
+
+% no pagenumbers, headers etc.
+\pagestyle{empty}
+
+% produce new page (\newslide does nothing in the printout version)
+\let\newslide=\newpage
+
+% sans font
+\renewcommand{\rmdefault}{\sfdefault}
+
+% command for screen-only content
+\newcommand{\SCR}[1]{#1}
+
+% command for printout-only content
+\newcommand{\PRN}[1]{\relax}
+
+% title page
+\newcommand{\makeslidetitle}[1]
+{%
+\hypersetup{pdftitle={Presentation - part #1}}
+\title{Presentation\\{\normalfont part #1}}
+\author{Maciej Wołoszyn\\
+AGH Kraków\\
+{\small \url{woloszyn@agh.edu.pl}}\\
+{\small \url{http://home.agh.edu.pl/woloszyn}}}
+\date{}
+\setcounter{chapter}{#1}
+\maketitle
+\newpage
+}
+
+\sloppy
+
+% include the content
+\begin{document}
+\input{content}
+\end{document}

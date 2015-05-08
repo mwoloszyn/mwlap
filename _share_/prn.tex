@@ -1,0 +1,71 @@
+%    Maciej Woloszyn AGH Krakow <woloszyn@agh.edu.pl> (c) 2010
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+% run (pdf)latex on this file to produce printout version of the presentation
+
+
+% include instructions shared by screen and printout versions
+\input{shared}
+
+% set page geometry
+\usepackage[a4paper,margin=20mm]{geometry}
+\usepackage{indentfirst}
+
+\let\newslide=\relax
+
+% sans fonts
+% \renewcommand{\rmdefault}{\sfdefault}
+
+% command for screen-only content
+\newcommand{\SCR}[1]{\relax}
+
+% command for printout-only content
+\newcommand{\PRN}[1]{#1}
+
+% headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\bfseries\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\addtolength{\headheight}{0.5pt}
+%\fancyhead[L]{\bfseries Programowanie obiektowe 2} % now defined below
+
+% title together with table of contents
+\newcommand{\makeslidetitle}[1]
+{%
+\setcounter{chapter}{#1}
+\fancyhead[L]{{\bfseries M.Wołoszyn -- Presentation #1} (\today)}
+\hypersetup{pdftitle={Presentation - part #1}}
+\renewcommand{\contentsname}{Presentation -- part #1} % replaces default ``Table of Contents''
+\tableofcontents
+\vspace*{1em}
+\begin{center}
+\textbf{Maciej Wołoszyn} AGH Kraków Poland ( \url{http://home.agh.edu.pl/woloszyn} )
+\textcopyright \today
+\end{center}
+\begin{footnotesize}
+Prepared with \LaTeX ~~\texttt{mwlap} tool by Maciej Wołoszyn
+(\href{mailto:woloszyn@agh.edu.pl}{\tt woloszyn@agh.edu.pl})
+\end{footnotesize}
+\vspace*{1em}
+\hrule
+}
+
+% include the content
+\begin{document}
+\input{content}
+\end{document}
