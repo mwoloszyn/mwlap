@@ -53,7 +53,8 @@ Then you should cd to the created directory.
 - Compilation to two separate PDF files (*-scr.pdf and *-prn.pdf)
   is easily done by invoking:
    - make
--If you need only 'screen' or 'printout' version you may use
+   
+- If you need only 'screen' or 'printout' version you may use
    - make scr
    - make prn
    - or simply run pdflatex on *-scr.tex or *-prn.tex.
