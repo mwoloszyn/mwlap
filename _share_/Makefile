@@ -31,6 +31,9 @@ scr:
 prn:
 	pdflatex -interaction=nonstopmode $(PRNTEX)
 
+rebuild: cleanall
+	make && make && make && make clean
+
 clean:
 	-$(RM) *~ *.backup *.aux *.toc *.log *.tmp *.out
 

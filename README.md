@@ -38,12 +38,16 @@ HOWTO
 
 The configuration used by all presentations (titles, style, colours, fonts,
 headers, syntax highlighting for included source code, language, encoding etc.)
-is defined in files stores in the _share_ directory.
+is defined in files stores in the \_share\_ directory.
 
 You will need to edit those files to suit them to your needs:
  - shared.tex -- included by both versions,
  - prn.tex -- included only by the 'printout' version,
  - scr.tex -- included only by the 'screen' version.
+ 
+For example, to change the text size and/or proportions of the presentation, 
+edit the following line in \_share\_/scr.tex :
+    \usepackage[papersize={100mm,75mm},margin=4mm]{geometry}
 
 To create a directory for a new presentation run create_new_presentation.sh
 (without parameters to get some help on it).
@@ -81,9 +85,11 @@ Some helpful (re)defined LaTeX commands:
 - \stdin{x} ==> for presenting interactive input
 - \out{x} ==> for presenting output (single line usually)
 - \outinclude{filename} ==> for presenting output included from file
+- \errinclude{filename} ==> for presenting errors
  
 and environments:
 - outlisting ==> for presenting output
+- errlisting ==> for presenting errors
 
 Note: listings containing max. 52 chars at 17 lines fit into the default 
 'screen' (papersize={100mm,75mm}, fontsize=10pt)

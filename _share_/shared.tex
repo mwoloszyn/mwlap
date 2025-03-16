@@ -38,10 +38,13 @@
 \definecolor{mw-lst-string}{rgb}{0.23,0.23,0.87}
 \definecolor{mw-lst-comment}{rgb}{0.25,0.45,0.35}
 \definecolor{mw-lst-keyword}{rgb}{0.49,0.04,0.33}
-\definecolor{mw-lst-back}{rgb}{0.9,0.9,0.94}
+%\definecolor{mw-lst-back}{rgb}{0.93,0.93,0.9}
+\definecolor{mw-lst-back}{rgb}{0.9,0.9,0.87}
 \definecolor{mw-lst-out}{rgb}{0.15,0.45,0.15}
 \definecolor{mw-concept}{rgb}{0.68,0.15,0.15}
 \definecolor{mw-underl}{rgb}{0.00,0.33,0.53}
+\definecolor{mw-out}{rgb}{0.05,0.4,0.4}
+\definecolor{mw-err}{rgb}{0.8,0.1,0.1}
 
 % style of source file listings
 \usepackage{listings}
@@ -65,18 +68,39 @@
 \newcommand{\TODO}[1]{\colorbox{red}{\textcolor{white}{\bf TODO}} \textcolor{red}{#1}}
 \newcommand{\Q}[1]{\colorbox{mw-lst-out}{\textcolor{white}{\bf ?}} \textcolor{mw-lst-out}{#1}}
 \newcommand{\W}[1]{\colorbox{red}{\textcolor{white}{\bf !}} \textcolor{red}{#1}}
-\newcommand{\stdin}[1]{\textcolor{mw-lst-out}{\texttt{#1}}}
-\newcommand{\out}[1]{\textcolor{mw-concept}{$\Rightarrow$} \texttt{#1}}
+\newcommand{\E}[1]{\colorbox{RawSienna}{\textcolor{white}{\bf $\#$}} \textcolor{RawSienna}{#1}}
+\newcommand{\stdin}[1]{\textcolor{mw-lst-string}{\texttt{#1}}}
+\newcommand{\out}[1]{\textcolor{mw-concept}{$\Rightarrow$} \textcolor{mw-out}{\texttt{#1}}}
+
 \newcommand{\outinclude}[1]{%
 \hspace*{0.49\textwidth}\textcolor{mw-concept}{$\Downarrow$} %
-\lstinputlisting[aboveskip=0.2ex,basicstyle=\color{black}\ttfamily,%
-keywordstyle=\color{black},commentstyle=\color{black},stringstyle=\color{black},%
-backgroundcolor=\color{white},%
-frame=lr,framesep=0pt]{#1}%
+\lstinputlisting[aboveskip=0.2ex,basicstyle=\color{mw-out}\ttfamily,%
+backgroundcolor=\color{white},language={},%
+frame=lr,framesep=0pt,breaklines=true]{#1}%
 }
+
+\newcommand{\errinclude}[1]{%
+\lstinputlisting[aboveskip=0.2ex,basicstyle=\color{mw-err}\ttfamily,%
+keywordstyle=\color{black},commentstyle=\color{black},stringstyle=\color{black},%
+backgroundcolor=\color{white},language={},%
+frame=lr,framesep=0pt,breaklines=true]{#1}%
+}
+
 \lstnewenvironment{outlisting}%
 {\hspace*{0.49\textwidth}\textcolor{mw-concept}{$\Downarrow$}%
-\lstset{aboveskip=0.2ex,basicstyle=\color{black}\ttfamily,%
+\lstset{aboveskip=0.2ex,basicstyle=\color{mw-out}\ttfamily,%
 keywordstyle=\color{black},commentstyle=\color{black},stringstyle=\color{black},%
 backgroundcolor=\color{white},%
 frame=lr,framesep=0pt}}{}
+\lstnewenvironment{errlisting}%
+{\hspace*{0.49\textwidth}\textcolor{mw-concept}{$\Downarrow$}%
+\lstset{aboveskip=0.2ex,basicstyle=\color{red}\ttfamily,%
+backgroundcolor=\color{white},%
+language={},%
+frame=lr,framesep=0pt}}{}
+
+% no numbering of sections etc: 
+%   see also http://tex.stackexchange.com/questions/30122/generate-table-of-contents-when-section-sections-without-numbering-has-been
+\setcounter{secnumdepth}{0}
+
+
