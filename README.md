@@ -1,6 +1,6 @@
 # mwlap
 
-Maciej Woloszyn AGH Krakow <woloszyn@agh.edu.pl> (c) 2010
+Maciej Woloszyn AGH Krakow <woloszyn@agh.edu.pl> (c) 2010-2025
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -91,4 +91,4 @@ Note: listings containing max. 52 chars at 17 lines fit into the default
 
 ---
 
-Automatically exported from code.google.com/p/mwlap
+Initial version automatically exported from code.google.com/p/mwlap

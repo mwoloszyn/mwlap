@@ -16,7 +16,7 @@
 
 # Makefile for compilation and running JAVA examples
 # TODO : add similar functionality for other languages.
-
+# TODO : support subdirs and take care about classes having same names (in different files)
 
 RM := rm -f
 JAVAC := javac

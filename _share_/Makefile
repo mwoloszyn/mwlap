@@ -14,6 +14,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # TODO : dependencies, see http://code.google.com/p/latex-makefile/
+#                      and http://ansuz.sooke.bc.ca/software/latex-tricks.php
 
 SCRTEX := $(wildcard *-scr.tex)
 PRNTEX := $(wildcard *-prn.tex)
@@ -24,11 +25,11 @@ all: scr prn
 
 # Produce the slideshow-only LaTeX source file by uncommenting lines
 scr:
-	pdflatex $(SCRTEX)
+	pdflatex -interaction=nonstopmode $(SCRTEX)
 
 # Produce the printout-only LaTeX source file by uncommenting lines
 prn:
-	pdflatex $(PRNTEX)
+	pdflatex -interaction=nonstopmode $(PRNTEX)
 
 clean:
 	-$(RM) *~ *.backup *.aux *.toc *.log *.tmp *.out

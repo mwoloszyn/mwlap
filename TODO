@@ -8,8 +8,9 @@ TODO list
  * more sophisticated Makefile for LaTeX, based on
      http://code.google.com/p/latex-makefile/
 
- * add support for other languages in _share_/src/Makefile
-
+ * _share_/src/Makefile : add support for other languages and improve Java
+     dependencies policy (ant?), add "make run"
+   
  * add _share_/fig/Makefile converting images to PDF, PNG or JPG formats
      allowed by pdflatex
 
